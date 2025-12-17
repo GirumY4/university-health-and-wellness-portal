@@ -9,7 +9,6 @@ interface User {
 interface AuthContextType {
   user: User | null;
   isAuthenticated: boolean;
-  // UPDATE: Return User object or null on failure
   login: (id: string, password: string) => User | null;
   logout: () => void;
 }
@@ -28,7 +27,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     if (storedUser) setUser(JSON.parse(storedUser));
   }, []);
 
-  // UPDATED LOGIN FUNCTION
   const login = (id: string, password: string): User | null => {
     let mockUser: User | null = null;
 

@@ -16,7 +16,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import StaffManagement from "./pages/StaffManagement";
 
 const NotFound = () => (
-  <h1 style={{ color: "red", padding: "2rem", textAlign: "center" }}>
+  <h1 css={{ color: "red", padding: "2rem", textAlign: "center" }}>
     404 | Page Not Found
   </h1>
 );
@@ -26,7 +26,6 @@ function App() {
     <ThemeProvider>
       <AuthProvider>
         <BrowserRouter>
-          {/* Global Reset/Styles */}
           <Global
             styles={css`
               body {

@@ -9,15 +9,6 @@ export interface Theme {
     background: string;
     surface: string;
     text: {
-      disabled: Interpolation<
-        {
-          theme?: Theme | undefined;
-          as?: ElementType<any, keyof IntrinsicElements> | undefined;
-        } & ClassAttributes<HTMLButtonElement> &
-          ButtonHTMLAttributes<HTMLButtonElement> & { theme: Theme } & {
-            theme: Theme;
-          }
-      >;
       primary: string;
       secondary: string;
       inverted: string;
