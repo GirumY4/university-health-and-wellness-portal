@@ -36,7 +36,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 
     // 1. Admin Check
     if (id === ADMIN_ID && password === ADMIN_PASSWORD) {
-      mockUser = { id: ADMIN_ID, name: "Lidet Kebede (Admin)", role: "admin" };
+      mockUser = { id: ADMIN_ID, name: "Girum Yasab (Admin)", role: "admin" };
     }
     // 2. Student/Staff Check (Simulated)
     else if (id !== ADMIN_ID) {

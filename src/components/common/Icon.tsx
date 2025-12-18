@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import type SvgIconProps from "@mui/material/SvgIcon"; // CORRECT: Import type from submodule
+import type SvgIconProps from "@mui/material/SvgIcon";
 import { IconMap, type IconName, getIconByName } from "../../utils/icons";
 
 export interface IconProps extends SvgIconProps {
