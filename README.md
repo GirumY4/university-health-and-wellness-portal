@@ -1,73 +1,74 @@
-# React + TypeScript + Vite
+# University Health & Wellness Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Lightweight admin portal for university health and wellness services — built with React, TypeScript, Vite and MUI.
 
-Currently, two official plugins are available:
+## Quick start
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Prerequisites: Node 18+ and npm or yarn.
 
-## React Compiler
+Install dependencies:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Run the dev server with Fast Refresh:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+Useful scripts (from `package.json`):
+
+- `dev` — start Vite dev server
+- `build` — type-check and build with Vite
+- `preview` — preview production build
+- `lint` / `lint:fix` — run ESLint
+- `type-check` — run TypeScript checks
+- `clean` — clear caches and `dist`
+- `dev:full` — clean, type-check, then start dev server
+
+## Tech stack
+
+- React 19 + TypeScript
+- Vite (bundler/dev server)
+- MUI (Material UI) for components and theming
+- React Router for routing
+- Axios for HTTP services
+
+## Project structure (high level)
+
+- `src/` — application source
+  - `app/` — main app shell, theme provider, router
+  - `components/` — shared UI components and layout
+  - `contexts/` — React contexts (Auth, Theme)
+  - `features/` — domain feature modules (appointments, dashboard, records, etc.)
+  - `services/` — API clients and service helpers
+  - `styles/` — global styles and theme definitions
+
+See the repository tree for full layout.
+
+## Development notes
+
+- This repo uses TypeScript project references and enforces type-checking before builds.
+- ESLint is configured; use `npm run lint:fix` to auto-fix where possible.
+
+## Contributing
+
+Please open issues or pull requests. Keep changes small and focused; run `npm run lint` and `npm run type-check` before submitting.
+
+## License
+
+Check the repository for a `LICENSE` file.
