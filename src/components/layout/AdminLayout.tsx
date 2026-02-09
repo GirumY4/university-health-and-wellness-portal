@@ -13,7 +13,7 @@ import {
   LogoutIcon,
   DarkModeIcon,
   LightModeIcon,
-} from "../../utils/icons.ts";
+} from "../../icons";
 import { Box, Tooltip } from "@mui/material";
 
 // --- Constants ---

@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import type SvgIconProps from "@mui/material/SvgIcon";
-import { IconMap, type IconName, getIconByName } from "../../utils/icons";
+import { IconMap, type IconName, getIconByName } from "../../icons";
 
 export interface IconProps extends SvgIconProps {
   name: IconName;
@@ -13,10 +13,10 @@ const Icon = forwardRef<SVGSVGElement, IconProps>(
     if (!IconComponent) {
       console.warn(`Icon "${name}" not found.`);
       const DefaultIcon = IconMap.Dashboard;
-      return <DefaultIcon ref={ref} {...svgIconProps} />;
+      return <DefaultIcon name={name} ref={ref} {...svgIconProps} />;
     }
 
-    return <IconComponent ref={ref} {...svgIconProps} />;
+    return <IconComponent name={name} ref={ref} {...svgIconProps} />;
   }
 );
 
